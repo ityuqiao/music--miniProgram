@@ -1,0 +1,24 @@
+function formatCount(count) {
+  var newCount = parseInt(count)
+  if ((newCount / 100000000) > 1) {
+    return (newCount / 100000000).toFixed(1) + '亿'
+  } else if((newCount / 10000) > 1) {
+    return (newCount /10000).toFixed(1) + '万'
+  } else {
+    return newCount
+  }
+}
+
+function formatTime(time) {
+  var newTime = time / 1000
+  var m = (newTime / 60).toFixed(0)
+  m = m > 9 ? m : '0' + m
+  var s = (newTime % 60).toFixed(0)
+  s = s > 9 ? s : '0' + s
+  return m + ':' + s
+}
+
+module.exports = {
+  formatCount: formatCount,
+  formatTime: formatTime,
+}

@@ -1,0 +1,28 @@
+<!--components/menu-header/menu-header.wxml-->
+<view class="content" style="background-image: url('{{menuInfo.playlist.coverImgUrl}}');">
+  <view class="top">
+    <image class="img" src="{{ menuInfo.playlist.coverImgUrl }}" mode="widthFix"/>
+    <view class="info">
+      <view class="name">
+        {{ menuInfo.playlist.name }}
+      </view>
+      <view class="user">
+        <image class="avatar" src="{{ menuInfo.playlist.subscribers[0].avatarUrl }}" mode="widthFix"/>
+        <text class="nickname">{{ menuInfo.playlist.subscribers[0].nickname }}</text>
+      </view>
+      <view class="desc">
+       简介：{{ menuInfo.playlist.description }}
+      </view>
+    </view>
+  </view>
+  <view class="bottom">
+  <view class="bfavor">
+    <image class="favor" src="/assets/images/icons/favor_icon.png" mode="widthFix"/>
+    <text class="count">{{ menuInfo.playlist.playCount }}</text>
+  </view>
+  <view class="bshare">
+    <image class="share" src="/assets/images/icons/share_icon.png" mode="widthFix"/>
+    <text class="text">分享</text>
+  </view>
+  </view>
+</view>

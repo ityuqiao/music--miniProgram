@@ -1,0 +1,10 @@
+/* pages/menu-detail/menu-detail.wxss */
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.my-class {
+  width: 350rpx !important;
+}

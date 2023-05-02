@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "header-title":"/components/header-title/header-title",
+    "music-item": "/components/music-item/music-item"
+
+  }
+}

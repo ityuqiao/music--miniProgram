@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index-music/index-music",
+    "pages/index-video/index-video",
+    "pages/video-detail/video-detail",
+    "pages/search-detail/search-detail",
+    "pages/recommend-music/recommend-music",
+    "pages/menu-detail/menu-detail",
+    "pages/music-player/music-player"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "HY-music",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index-music/index-music",
+        "text": "音乐",
+        "iconPath": "/assets/images/tabbar/music_normal.png",
+        "selectedIconPath": "/assets/images/tabbar/music_active.png"
+      },
+      {
+        "pagePath": "pages/index-video/index-video",
+        "text": "MV",
+        "iconPath": "/assets/images/tabbar/video_normal.png",
+        "selectedIconPath": "/assets/images/tabbar/video_active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

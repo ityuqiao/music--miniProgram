@@ -1,0 +1,5 @@
+<!--pages/music-player/music-player.wxml-->
+<!-- <text>pages/music-player/music-player.wxml</text> -->
+<view>
+  {{ id }}
+</view>

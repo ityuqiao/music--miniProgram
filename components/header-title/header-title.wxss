@@ -1,0 +1,21 @@
+/* components/video-item/header-title/header-title.wxss */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0;
+}
+.header .title {
+  font-size: 34rpx;
+  font-weight: 700;
+}
+
+.header .right {
+  display: flex;
+  align-items: center;
+  color: #888;
+}
+.header .more {
+  font-size: 26rpx;
+  margin-right: 8rpx;
+}

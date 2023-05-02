@@ -1,0 +1,15 @@
+/* components/music-commend/music-commend.wxss */
+
+.hot-item {
+  display: flex;
+  height: 300rpx;
+  width: 100%;
+  margin-left: -24rpx;
+  /* padding-left: 20rpx; */
+}
+.itemView {
+  margin-right: 15rpx;
+}
+.itemView:first-child {
+  margin-left: 24rpx;
+}

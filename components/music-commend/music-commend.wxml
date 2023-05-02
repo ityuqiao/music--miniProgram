@@ -1,0 +1,12 @@
+<!--components/music-commend/music-commend.wxml-->
+<!-- <text>components/music-commend/music-commend.wxml</text> -->
+<view class="hot-list">
+  <header-title title="{{title}}" bind:onClickMore="onClickMore" />
+  <scroll-view class="hot-item" scroll-x enable-flex style="width: {{ screenWidth }}px;">
+    <block wx:for="{{ musicList }}" wx:key="id">
+    <view class="itemView">
+      <music-item class="hotItem" item="{{ item }}"></music-item>
+    </view>
+    </block>
+  </scroll-view>
+</view>

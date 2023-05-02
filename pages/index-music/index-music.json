@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "van-search": "@vant/weapp/search/index",
+    "header-title":"/components/header-title/header-title",
+    "song-item-six": "/components/song-item-six/song-item-six",
+    "music-commend": "/components/music-commend/music-commend",
+    "ranking-item": "/components/ranking-item/ranking-item"
+  },
+  "navigationBarTitleText": "音乐推荐"
+}

@@ -1,0 +1,26 @@
+/* components/song-item-six/song-item-six.wxss */
+.content {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.content .pic {
+  width: 150rpx;
+  border-radius: 10rpx;
+  margin-right: 20rpx;
+}
+.content .info .name{
+  font-size: 30rpx;
+}
+.content .info .arName {
+  font-size: 24rpx;
+  margin-top: 25rpx;
+  color: #999;
+}
+.content .iconAr {
+  position: absolute;
+  right: 10rpx;
+  top: 30rpx;
+  color: #999;
+}

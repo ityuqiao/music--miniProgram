@@ -1,0 +1,21 @@
+/* components/music-item2/music-item2.wxss */
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.index {
+  margin: 0 20rpx;
+  font-size: 28rpx;
+}
+.info .name {
+  font-size: 26rpx;
+}
+.info .arName {
+  font-size: 20rpx;
+  color: #666;
+  margin-left: 10rpx;
+}
+.img {
+  width: 30rpx;
+}

@@ -1,0 +1,49 @@
+<van-search
+  value="{{ value }}"
+  shape="round"
+  background="#f5f5f5"
+  placeholder="输入歌曲名称或作者名"
+  bind:click-input="onSearchClick"
+/>
+
+<!-- 轮播图 -->
+<swiper class="banner" 	indicator-dots 	indicator-active-color="#fff" autoplay interval="3000" circular>
+  <block wx:for="{{ MusicBanner }}" wx:key="targetId">
+    <swiper-item class="item">
+      <image class="thisImg" src="{{ item.pic }}" mode="widthFix"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+
+
+<!-- hotList -->
+<music-commend  title="热门歌单" musicList="{{ hotList }}" screenWidth="{{ screenWidth }}" />
+<!-- 华语歌单 -->
+<music-commend  title="华语赏阅" musicList="{{ ChineseMusic }}" screenWidth="{{ screenWidth }}" />
+
+
+<!-- 推荐歌曲 -->
+<view class="recommend">
+  <header-title title="推荐歌曲" bindonClickMore="onClickMore" />
+  <view class="recommendSixList">
+    <block wx:for="{{ recommendSixList }}" wx:key="id">
+      <song-item-six item="{{ item }}" bindtap="onMusicItemTap" data-item="{{ item }}" />
+    </block>
+  </view>
+</view>
+
+<!-- 巅峰榜 -->
+<view class="ranking">
+  <header-title title="巅峰榜" hasMore="{{ false }}" />
+  <view class="ranking-item">
+    <block wx:for="{{ ranking }}" wx:key="index">
+    <view>
+      <ranking-item itemData="{{ item.playlist }}" />
+    </view>
+    </block>
+  </view> 
+</view>
+
+

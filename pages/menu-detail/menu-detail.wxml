@@ -1,0 +1,11 @@
+<!--pages/menu-detail/menu-detail.wxml-->
+<view>
+  <block wx:for="{{ menuList }}" wx:key="cat">
+  <header-title title="{{ item.cat }}" hasMore="{{ false }}" />
+    <view class="list">
+    <block wx:for="{{ item.playlists }}" wx:key="id" wx:for-item="mItem">
+      <music-item class="mItem" my-class="my-class" item="{{ mItem }}" />
+    </block>
+    </view>
+  </block>
+</view>

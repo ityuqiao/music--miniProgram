@@ -1,0 +1,6 @@
+/* pages/recommend-music/recommend-music.wxss */
+.title {
+  margin-left: 15rpx;
+  margin-bottom: 30rpx;
+  font-weight: 700;
+}

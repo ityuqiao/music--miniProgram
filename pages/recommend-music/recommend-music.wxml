@@ -1,0 +1,16 @@
+<!--pages/recommend-music/recommend-music.wxml-->
+<view class="music">
+<view wx:if="{{id}}">
+  <menu-header menuInfo="{{ menuInfo }}" />
+</view>
+<view class="title" wx:else="">
+  {{ title }}
+</view>
+  <view>
+    <block wx:for="{{ musicList }}" wx:key="id">
+      <view>
+        <music-item2 itemData="{{ item }}" index="{{ index + 1 }}" bindtap="onMusicItemTap" data-item="{{ item }}" />
+      </view>
+    </block>
+  </view>
+</view>

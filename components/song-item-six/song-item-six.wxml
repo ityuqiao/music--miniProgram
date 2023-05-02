@@ -1,0 +1,16 @@
+<view class="content">
+  <view>
+    <image class="pic" src="{{ item.al.picUrl }}" mode="widthFix"/>
+  </view>
+  <view class="info">
+    <view class="name">
+      {{ item.name }}
+    </view>
+    <view class="arName">
+      {{ item.ar[0].name }}
+    </view>
+  </view>
+  <view class="iconAr">
+    <van-icon name="arrow" />
+  </view>
+</view>

@@ -1,0 +1,15 @@
+<view class="item my-class" bindtap="onItemTap">
+  <view class="pic">
+    <image class="img" src="{{ item.coverImgUrl }}" mode="widthFix"/>
+    <view class="count">
+      {{ fmt.formatCount(item.playCount) }}
+    </view>
+  </view>
+  <view class="info">
+    {{ item.name }}
+  </view>
+</view>
+
+<wxs src="/utils/format.wxs" module="fmt"></wxs>
+
+

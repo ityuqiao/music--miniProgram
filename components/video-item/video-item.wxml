@@ -1,0 +1,19 @@
+<view>
+  <view class="album">
+    <image  class="image" src="{{item.cover}}" mode="widthFix" />
+    <view class="info">
+      <view class="count">
+        {{ fmt.formatCount(item.playCount) }}
+      </view>
+      <view class="duration">
+        {{ fmt.formatTime(item.mv.videos[0].duration) }}
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    {{ item.name }} - {{ item.artistName }}
+  </view>
+</view>
+
+<wxs module="fmt" src="/utils/format.wxs">
+</wxs>

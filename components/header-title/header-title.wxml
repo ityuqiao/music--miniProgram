@@ -1,0 +1,11 @@
+<view class="header">
+  <view class="title">
+    {{ title }}
+  </view>
+  <view class="right" bindtap="onClickMore">
+  <block  wx:if="{{ hasMore }}">
+    <text class="more">更多</text>
+    <van-icon name="arrow" />
+  </block>
+  </view>
+</view>

@@ -1,0 +1,20 @@
+<view>
+  <video class="video" src="{{ MVUrl }}" muted autoplay show-mute-btn danmu-btn referrer-policy="origin" />
+</view>
+<scroll-view class="content" scroll-y="true">
+  <view class="name">{{ MVInfo.name }} - {{ MVInfo.artistName }}</view>
+  <view class="desc">
+    {{ MVInfo.desc }}
+  </view>
+  <view class="relatedItem">
+    <view class="topRelated">
+      相关视频
+    </view>
+    <block wx:for="{{ relatedVideo }}" wx:key="vid">
+      <view class="VItem">
+        <image class="img" src="{{ item.coverUrl }}" mode="widthFix" />
+        <view class="title">{{ item.title }}w</view>
+      </view>
+    </block>
+  </view>
+</scroll-view>

@@ -1,0 +1,15 @@
+<!--components/music-item2/music-item2.wxml-->
+<view class="item">
+  <view class="index">
+    {{ index }}
+  </view>
+  <view class="info">
+    <view class="name">
+      {{ itemData.name }}
+    </view>
+    <view class="ar">
+      <image class="img" src="/assets/images/icons/sq_icon.png" mode="widthFix"/>
+      <text class="arName">{{ itemData.ar[0].name }}</text>
+    </view>
+  </view>
+</view>
