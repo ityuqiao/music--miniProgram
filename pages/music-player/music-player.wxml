@@ -1,5 +1,66 @@
 <!--pages/music-player/music-player.wxml-->
 <!-- <text>pages/music-player/music-player.wxml</text> -->
+<wxs src="/utils/format.wxs" module="fmt"></wxs>
 <view>
-  {{ id }}
+  <image class="backImg" src="{{ songDetail.al.picUrl }}" mode="aspectFill"/>
+  <view class="mask"></view>
+  <navBar>
+    <view slot="left">
+      <van-icon class="arrow-left" name="arrow-left" bindtap="onBack" />
+    </view>
+    <view slot="center">
+      <view class="tab">
+        <view data-index="{{0}}" bindtap="changeIndex" class="item {{ currentPage === 0 ? 'active' : '' }}">
+          歌曲
+        </view>
+        <view>
+          |
+        </view>
+        <view data-index="{{1}}" bindtap="changeIndex" class="item {{ currentPage === 1 ? 'active' : '' }}">
+          歌词
+        </view>
+      </view>
+    </view>
+  </navBar>
+  <swiper style="height: {{ contentHeight }}px;" bindchange="onChange" current="{{currentPage}}">
+    <swiper-item>
+      <view class="main">
+        <view>
+          <image class="img" src="{{ songDetail.al.picUrl }}" mode="widthFix"/>
+        </view>
+        <view class="info">
+          <view class="songName">
+            {{ songDetail.name }}
+          </view>
+          <view class="arName">
+            {{ songDetail.ar[0].name }}
+          </view>
+        </view>
+        <view class="lyric">
+          我手机看到我的
+        </view>
+        <view class="slider">
+          <slider class="process" block-size="12" bindchange="onSliderChange" value="{{ sliderValue }}"/>
+          <view class="time">
+            <view class="thisTime">
+              {{ fmt.formatTime(currentTime) }}
+            </view>
+            <view class="allTime">
+              {{ fmt.formatTime(durationTime) }}
+            </view>
+          </view>
+        </view>
+        <view class="play">
+          <image class="btn order" src="../../assets/images/player/play_order.png" mode="widthFix"/>
+          <image class="btn prev" src="../../assets/images/player/play_prev.png" mode="widthFix"/>
+          <image class="btn resume" src="../../assets/images/player/play_resume.png" mode="widthFix"/>
+          <image class="btn next" src="../../assets/images/player/play_next.png" mode="widthFix"/>
+          <image class="btn music" src="../../assets/images/player/play_music.png" mode="widthFix"/>
+        </view>
+      </view>
+    </swiper-item>
+    <swiper-item>
+      2222
+    </swiper-item>
+  </swiper>
 </view>

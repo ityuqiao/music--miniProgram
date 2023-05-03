@@ -1,0 +1,13 @@
+/* components/navBar/navBar.wxss */
+.navBar {
+  color: white;
+}
+.left, .right {
+  width: 150rpx;
+}
+.navBar .bar {
+  display: flex;
+  height: 44px;
+  justify-content: space-between;
+  align-items: center;
+}

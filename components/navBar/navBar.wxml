@@ -1,0 +1,13 @@
+<!--components/navBar/navBar.wxml-->
+<view class="navBar">
+    <view class="status" style="height: {{ statusBarHeight }}px;"></view>
+    <view class="bar">
+      <view class="left">
+        <slot name="left"></slot>
+      </view>
+      <view class="center">
+        <slot name="center"></slot>
+      </view>
+      <view class="right"></view>
+    </view>
+  </view>

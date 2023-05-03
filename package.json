@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "@vant/weapp": "^1.10.16",
+    "lodash": "^4.17.21",
     "underscore": "^1.13.6"
   }
 }
