@@ -6,7 +6,7 @@ App({
         this.globalData.screenHeight = res.screenHeight
         this.globalData.screenWidth = res.screenWidth
         this.globalData.statusBarHeight = res.statusBarHeight
-        this.globalData.contentHeight = res.windowHeight - res.statusBarHeight - 44
+        this.globalData.contentHeight = res.screenHeight - res.statusBarHeight - 44
       }
     })
   },

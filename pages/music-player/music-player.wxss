@@ -1,5 +1,4 @@
 /* pages/music-player/music-player.wxss */
-
 .backImg, .mask {
   position: fixed;
   width: 100%;
@@ -13,7 +12,6 @@
 }
 
 .arrow-left {
-  /* width: 40rpx; */
   font-size: 40rpx;
   margin-left: 30rpx;
 }
@@ -55,7 +53,13 @@
 .lyric {
   text-align: center;
   margin-bottom: 30rpx;
+  height: 75rpx;
+  width: 400rpx;
+  margin: 0 auto;
   font-size: 26rpx;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 .time {
   display: flex;
@@ -80,4 +84,26 @@
 }
 .play .resume {
   width: 130rpx;
+}
+
+.allLyric {
+  height: 100%;
+  font-size: 25rpx;
+  color: #aaa;
+  box-sizing: border-box;
+  padding-bottom: 30rpx;
+}
+.allLyric ::-webkit-scrollbar {
+  display: none;
+}
+
+.allLyric .lyricItem {
+  height: 60rpx;
+  width: 400rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.lyricActive {
+  color: white;
 }

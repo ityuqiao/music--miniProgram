@@ -1,5 +1,16 @@
 // pages/index-music/index-music.js
-import { getMusicBanner, getRecommendList, getHotList, getRanking } from '../../services/music'
+import {
+  createStoreBindings
+} from 'mobx-miniprogram-bindings'
+import {
+  store
+} from '../../store/store'
+import {
+  getMusicBanner,
+  getRecommendList,
+  getHotList,
+  getRanking
+} from '../../services/music'
 // import { getSelectorQuery } from '../../utils/selector'
 const app = getApp()
 Page({
@@ -15,10 +26,17 @@ Page({
     screenWidth: null
   },
   onLoad() {
+    this.storeBindings = createStoreBindings(this, {
+      store,
+      fields: ['songList', 'currentSongIndex'],
+      actions: ['updateSongList', 'updateIndex'],
+    })
     this.getBanner()
     this.getRecommendMusic()
     this.getHotMusic()
-    this.setData({ screenWidth: app.globalData.screenWidth - 12 })
+    this.setData({
+      screenWidth: app.globalData.screenWidth - 12
+    })
     this.getRankingFn()
   },
   onReady() {},
@@ -39,8 +57,10 @@ Page({
   },
   onMusicItemTap(e) {
     // console.log(e);
-    const id = e.currentTarget.dataset.item.id
-    console.log(id);
+    const index = e.currentTarget.dataset.index
+    const id = e.currentTarget.dataset.id
+    this.updateSongList(this.data.recommendSixList)
+    this.updateIndex(index)
     wx.navigateTo({
       url: `/pages/music-player/music-player?id=${id}`,
     })
@@ -48,30 +68,41 @@ Page({
   async getRankingFn() {
     const rankID = this.data.rankID
     const PromiseArr = []
-    for(let id of rankID) {
+    for (let id of rankID) {
       PromiseArr.push(getRanking(id))
     }
     Promise.all(PromiseArr).then(res => {
-      this.setData({ ranking: res })
+      this.setData({
+        ranking: res
+      })
     })
   },
   async getHotMusic() {
     getHotList('全部').then(res => {
-      this.setData({ hotList: res.playlists })
+      this.setData({
+        hotList: res.playlists
+      })
     })
     getHotList('华语').then(res => {
-      this.setData({ ChineseMusic: res.playlists })
+      this.setData({
+        ChineseMusic: res.playlists
+      })
     })
   },
   async getBanner() {
     const res = await getMusicBanner()
-    this.setData({ MusicBanner: res.banners })
+    this.setData({
+      MusicBanner: res.banners
+    })
   },
   async getRecommendMusic() {
     const res = await getRecommendList(2884035)
     let recommendList = res.playlist.tracks
     let recommendSixList = recommendList.slice(0, 6)
-    this.setData({ recommendList, recommendSixList })
+    this.setData({
+      recommendList,
+      recommendSixList
+    })
   }
 
 })

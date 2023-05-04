@@ -2,7 +2,7 @@
 <!-- <text>pages/music-player/music-player.wxml</text> -->
 <wxs src="/utils/format.wxs" module="fmt"></wxs>
 <view>
-  <image class="backImg" src="{{ songDetail.al.picUrl }}" mode="aspectFill"/>
+  <image class="backImg" src="{{ songDetail.al.picUrl }}" mode="aspectFill" />
   <view class="mask"></view>
   <navBar>
     <view slot="left">
@@ -24,9 +24,9 @@
   </navBar>
   <swiper style="height: {{ contentHeight }}px;" bindchange="onChange" current="{{currentPage}}">
     <swiper-item>
-      <view class="main">
+      <view class="main" style="height: {{ contentHeight }}px;">
         <view>
-          <image class="img" src="{{ songDetail.al.picUrl }}" mode="widthFix"/>
+          <image class="img" src="{{ songDetail.al.picUrl }}" mode="widthFix" />
         </view>
         <view class="info">
           <view class="songName">
@@ -37,10 +37,10 @@
           </view>
         </view>
         <view class="lyric">
-          我手机看到我的
+          {{ currentLyric }}
         </view>
         <view class="slider">
-          <slider class="process" block-size="12" bindchange="onSliderChange" value="{{ sliderValue }}"/>
+          <slider class="process" block-size="12" bindchange="onSliderChange" value="{{ sliderValue }}" />
           <view class="time">
             <view class="thisTime">
               {{ fmt.formatTime(currentTime) }}
@@ -51,16 +51,22 @@
           </view>
         </view>
         <view class="play">
-          <image class="btn order" src="../../assets/images/player/play_order.png" mode="widthFix"/>
-          <image class="btn prev" src="../../assets/images/player/play_prev.png" mode="widthFix"/>
-          <image class="btn resume" src="../../assets/images/player/play_resume.png" mode="widthFix"/>
-          <image class="btn next" src="../../assets/images/player/play_next.png" mode="widthFix"/>
-          <image class="btn music" src="../../assets/images/player/play_music.png" mode="widthFix"/>
+          <image class="btn order" bindtap="changeModel" src="../../assets/images/player/play_{{ model[thisModel] }}.png" mode="widthFix" />
+          <image class="btn prev" bindtap="preSong" src="../../assets/images/player/play_prev.png" mode="widthFix" />
+          <image class="btn resume" bindtap="onPauseBtn" src="../../assets/images/player/play_{{ isPlaying ? 'pause' : 'resume' }}.png" mode="widthFix" />
+          <image class="btn next" bindtap="nextSong" src="../../assets/images/player/play_next.png" mode="widthFix" />
+          <image class="btn music" src="../../assets/images/player/play_music.png" mode="widthFix" />
         </view>
       </view>
     </swiper-item>
     <swiper-item>
-      2222
+      <scroll-view scroll-with-animation class="allLyric" scroll-y scroll-top="{{ currentLyricIndex * 30 }}">
+        <block wx:for="{{ songLyric }}" wx:key="allTime">
+          <view class="lyricItem {{ currentLyricIndex === index ? 'lyricActive' : '' }}" style="padding-top: {{ index === 1 ? (contentHeight/2) - 50 : 0 }}px; padding-bottom: {{ index === songLyric.length - 1 ? (contentHeight/2) + 50 : 0 }}px;">
+            {{ item.text }}
+          </view>
+        </block>
+      </scroll-view>
     </swiper-item>
   </swiper>
 </view>
