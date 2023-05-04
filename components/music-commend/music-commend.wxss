@@ -13,3 +13,7 @@
 .itemView:first-child {
   margin-left: 24rpx;
 }
+
+.hot-item ::-webkit-scrollbar {
+  display: none;
+}
