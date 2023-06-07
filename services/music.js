@@ -43,3 +43,29 @@ export function getRanking(id) {
     }
   })
 }
+
+// 搜索页面接口
+export function getHotSearchList() {
+  return HyRequestInstance.get({
+    url: '/search/hot'
+  })
+}
+
+export function getSearchSuggestions(keywords) {
+  return HyRequestInstance.get({
+    url: `/search/suggest`,
+    data: {
+      keywords,
+      type: 'mobile'
+    }
+  })
+}
+
+export function search(keywords) {
+  return HyRequestInstance.get({
+    url: '/search',
+    data: {
+      keywords
+    }
+  })
+}

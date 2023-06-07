@@ -1,2 +1,39 @@
 <!--pages/search-detail/search-detail.wxml-->
-<text>pages/search-detail/search-detail.wxml</text>
+<van-search
+  value="{{ value }}"
+  shape="round"
+  background="#f5f5f5"
+  placeholder="请输入搜索关键词"
+  bind:change="changeValue"
+  bind:search="starSearch"
+/>
+<!-- 搜索建议 -->
+
+
+<view class="hot-list">
+<view class="search">
+  <block wx:for="{{ suggestionsList }}" wx:key="keyword">
+  <view class="suggestionItem">
+    <image class="SImg" src="../../assets/images/icons/搜索.png" mode="widthFix"/>
+    <view class="Item">
+      {{ item.keyword }}
+    </view>
+  </view>
+  </block>
+</view>
+
+<view class="text">
+  <view>
+    热门搜索
+  </view>
+  <view class="box">
+    <image class="img" src="../../assets/images/icons/播放2.png" mode="widthFix"/>
+  </view>
+</view>
+<block wx:for="{{ hotSearchList }}" wx:key="first">
+  <view class="hot-item">
+    <text class="num">{{ index + 1}}</text>
+    <text class="name">{{ item.first }}</text>
+  </view>
+</block>
+</view>

@@ -1,1 +1,70 @@
 /* pages/search-detail/search-detail.wxss */
+page{ 
+  --search-background-color: #fff;
+  --search-padding: 20rpx 0;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  padding: 0 24rpx;
+}
+.text {
+  display: flex;
+  font-size: 30rpx;
+  margin: 20rpx;
+  margin-top: 0;
+  font-weight: 600;
+}
+
+.text .box {
+  width: 65rpx;
+  height: 40rpx;
+  border-radius: 10rpx;
+  background-color: rgb(220, 252, 220);
+  text-align: center;
+  margin-left: 30rpx;
+}
+
+.text .img {
+  width: 30rpx;
+  vertical-align: middle;
+  margin-bottom: 7rpx;
+}
+
+.hot-list {
+  position: relative;
+  background-color: #fff;
+  border-radius: 15rpx;
+  padding-top: 20rpx;
+}
+
+.hot-item {
+  height: 80rpx;
+}
+
+.hot-item .num {
+  margin: 0 18rpx 0 10rpx;
+}
+
+.hot-item:nth-child(2) .num,
+.hot-item:nth-child(3) .num,
+.hot-item:nth-child(4) .num {
+  color: hotpink;
+  font-size: 36rpx;
+}
+
+.name { 
+  font-size: 28rpx;
+}
+.search {
+  position: absolute;
+}
+.search .suggestionItem {
+  display: flex;
+  height: 70rpx;
+  background-color: #fff;
+  border-radius: 15rpx;
+}
+.search .SImg {
+  width: 40rpx;
+  vertical-align: middle;
+  margin: 0 15rpx;
+}

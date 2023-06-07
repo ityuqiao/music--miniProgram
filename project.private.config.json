@@ -35,6 +35,13 @@
           "query": "id=33894312",
           "launchMode": "default",
           "scene": null
+        },
+        {
+          "name": "搜索页面",
+          "pathName": "pages/search-detail/search-detail",
+          "query": "",
+          "launchMode": "default",
+          "scene": null
         }
       ]
     }

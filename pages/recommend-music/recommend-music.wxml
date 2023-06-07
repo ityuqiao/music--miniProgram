@@ -3,7 +3,7 @@
 <view wx:if="{{id}}">
   <menu-header menuInfo="{{ menuInfo }}" />
 </view>
-<view class="title" wx:else="">
+<view class="title" wx:else>
   {{ title }}
 </view>
   <view>
