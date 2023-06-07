@@ -1,0 +1,20 @@
+/* components/tabControl/tab-control.wxss */
+.title{ 
+  display: flex;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.item {
+  flex: 1;
+
+}
+.active {
+  color: orange;
+}
+
+.title .active .innerTitle {
+  border-bottom: 2px solid orange;
+  padding-bottom: 6rpx;
+}

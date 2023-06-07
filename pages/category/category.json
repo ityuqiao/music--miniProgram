@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "cpn-1": "/components/cpn_1/cpn_1",
+    "tab-control": "/components/tabControl/tab-control"
+  }
+}

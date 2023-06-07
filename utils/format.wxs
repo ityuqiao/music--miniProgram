@@ -1,0 +1,14 @@
+function formatCounte(n) {
+  var newN = parseInt(n)
+  if (newN >= 100000000) {
+    return newN/100000000 + '亿'
+  } else if (newN > 10000) {
+    return newN/10000 + '万'
+  } else {
+    return newN
+  }
+}
+
+module.exports = {
+  formatCounte: formatCounte
+}

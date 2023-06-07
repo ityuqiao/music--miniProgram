@@ -1,0 +1,3 @@
+<!--pages/nevPage/nevPage.wxml-->
+<!-- <text>pages/nevPage/nevPage.wxml</text> -->
+<button bindtap="navBack">返回</button>

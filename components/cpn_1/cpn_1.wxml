@@ -1,0 +1,5 @@
+<!--components/cpn_1/cpn_1.wxml-->
+<!-- <text>components/cpn_1/cpn_1.wxml</text> -->
+<view>
+  <text class="text info" bindtap="textClick">hello world</text>
+</view>

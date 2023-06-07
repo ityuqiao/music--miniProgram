@@ -1,0 +1,41 @@
+<!--pages/category/category.wxml-->
+<text>pages/category/category.wxml</text>
+<view>
+  <block wx:for="{{ list }}" wx:key="name">
+    <view>
+      {{ item.name }}-{{ formate.formartAge(item.age) }}
+    </view>
+  </block>
+</view>
+<view>
+  {{ fmt.formatCounte(counter) }}
+</view>
+
+<view class="outer" bindtap="btnTap">
+  <view class="inner">
+
+  </view>
+</view>
+
+<view class="title">
+  <block wx:for="{{titleList}}" wx:key="*this">
+    <view class="item {{ currentIndex === index ? 'active' : '' }}" bindtap="itemTap" data-index="{{ index }}">
+      <text class="innerTitle">{{ item }}</text>
+    </view>
+  </block>
+</view>
+<cpn-1 info="info" bind:textClick="textClick"></cpn-1>
+<tab-control titleList="{{ titleList }}" bind:changeIndex="changeIndex"/>
+<view>
+  {{ year }}
+</view>
+<wxs module="formate">
+  function formartAge(age) {
+    return age + '岁'
+  }
+  module.exports = {
+    formartAge: formartAge
+  }
+</wxs>
+
+<wxs module="fmt" src="/utils/format.wxs"></wxs>

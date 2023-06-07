@@ -1,0 +1,11 @@
+/* pages/favor/favor.wxss */
+.title {
+  color: red;
+}
+.counterView{
+  text-align: center;
+}
+.counter {
+  font-size: 20px;
+  color: orange;
+}

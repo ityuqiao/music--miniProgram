@@ -1,0 +1,20 @@
+<!-- home -->
+<view>
+  <block wx:for="{{ list }}" wx:key="*this">
+    <button type="primary" bind:tap="btnClick" data-item="{{ item }}">{{ item }}</button>
+  </block>
+</view>
+
+<text user-select>hello world</text>
+<view>
+  
+</view>
+<button type="primary" size="mini" bindtap="getUserProfile">获取用户信息</button>
+<button type="primary" size="mini" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取用户手机号</button>
+<button type="primary" bindtap="chooseImg">选择图片</button>
+<image src="{{ imgPath }}" mode="widthFix"/>
+<input class="Input" type="text" model:value="{{ value }}"/>
+
+<view class="item"> 
+  
+</view>

@@ -1,0 +1,14 @@
+<!--pages/favor/favor.wxml-->
+<text class="title">{{ content }}</text>
+<view class="movies">
+  <block wx:for="{{ movies }}" wx:key="*this">
+    <view>{{ item }}-{{ index }}</view>
+  </block>
+</view>
+<view class="counterView">
+  <text class="counter">当前计数：{{ counter }}</text>
+  <view>
+    <button size="mini" type="primary" bind:tap="increment">+1</button>
+    <button size="mini" type="warn" bind:tap="decrement">-1</button>
+  </view>
+</view>
